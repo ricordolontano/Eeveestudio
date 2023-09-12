@@ -4,13 +4,18 @@ import { OrbitControls } from '@react-three/drei'
 import { Oggetto3d } from "./public/Abstract_design"
 import { Float, Caustics, Sparkles, AccumulativeShadows, RandomizedLight, PerformanceMonitor, Environment, Lightformer, PresentationControls, ScrollControls, Scroll, CameraShake, SpotLight } from '@react-three/drei'
 import { Html } from "@react-three/drei"
+import React, { useEffect } from 'react'
 import Stars from './components/Stars'
 import { MathUtils } from 'three'
 import { useMemo } from 'react'
+import { useSpring, animated as anim } from 'react-spring'
 import './app.scss';
-import {motion, AnimatePresence} from "framer-motion";
+import {motion, AnimatePresence, color} from "framer-motion";
 
 export default function App() {
+
+
+  
 
   const [open, setOpen] = useState(false);
 
@@ -39,6 +44,10 @@ export default function App() {
   return (
     
     <Canvas>
+
+
+
+
       <Suspense fallback={null}> 
         <Stars />
         <RandomizedLight castShadow amount={14} frames={100} position={[1, 0, -1]} />
@@ -51,6 +60,7 @@ export default function App() {
             <ScrollControls pages={0} damping={0.2}>
               
           <Scroll html>
+
 
 
           <div className="container">
@@ -72,8 +82,12 @@ export default function App() {
               <div className="btn_close" onClick={closeMenu}>X</div>
               <motion.a href=""
                  initial={{y:80,opacity:0}}
-                 animate={{y:0, opacity:1}}
-                 transition={{delay:.8}}
+                 animate={{y:0, opacity:0.5}}
+                 transition={{delay:.4}}
+                 whileHover={{
+                  opacity: 1,
+                  transition: { duration: 0.3 },
+                }}
                  exit={{
                   opacity:0,
                   y:90,
@@ -85,8 +99,12 @@ export default function App() {
               >Home</motion.a>
               <motion.a href=""
                  initial={{y:80,opacity:0}}
-                 animate={{y:0, opacity:1}}
-                 transition={{delay:.7}}
+                 animate={{y:0, opacity:0.5}}
+                 transition={{delay:.4}}
+                 whileHover={{
+                  opacity: 1,
+                  transition: { duration: 0.3 },
+                }}
                  exit={{
                   opacity:0,
                   y:90,
@@ -98,8 +116,18 @@ export default function App() {
               >About</motion.a>
               <motion.a href=""
                  initial={{y:80,opacity:0}}
-                 animate={{y:0, opacity:1}}
-                 transition={{delay:.6}}
+                 animate={{y:0, opacity:0.5}}
+                 transition={{delay:.3}}
+                 whileHover={{
+                  opacity: 1,
+                  transition: { duration: 0.3 },
+                  delay: 0
+                }}
+                whileTap={{
+                  transition: {color: "#FE006B" }
+
+                  
+                }}
                  exit={{
                   opacity:0,
                   y:90,
@@ -111,8 +139,12 @@ export default function App() {
               >Portfolio</motion.a>
               <motion.a href=""
                  initial={{y:80,opacity:0}}
-                 animate={{y:0, opacity:1}}
-                 transition={{delay:.5}}
+                 animate={{y:0, opacity:0.5}}
+                 transition={{delay:.2}}
+                 whileHover={{
+                  opacity: 1,
+                  transition: { duration: 0.3 },
+                }}
                  exit={{
                   opacity:0,
                   y:90,
