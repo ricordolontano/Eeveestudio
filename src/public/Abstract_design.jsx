@@ -19,7 +19,7 @@ export function Oggetto3d(props) {
 
   return (
 <group {...props} dispose={null}>
-      <mesh {...props} ref={ref} geometry={nodes.VoronoiDynoBake_Material_0.geometry} material={materials.Material} rotation={[-Math.PI / 2, 0, 0]} position={ [0, -70, 0,] } scale={100} />
+      <mesh {...props} ref={ref} geometry={nodes.VoronoiDynoBake_Material_0.geometry} material={materials.Material} rotation={[-Math.PI / 2, 0, 0]} position={ [0, 0, 0,] } scale={10} />
       </group>
   )
 }
