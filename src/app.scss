@@ -46,7 +46,7 @@
 
 
 .text {
-  margin-top: 100px;
+  margin-top: -85px;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -66,7 +66,7 @@
   text-align: center;
   font-variation-settings: "wght" 100, "ital" 0;
   font-family: Oddval Variable;
-  font-size: 9vh;
+  font-size: 8.6vh;
   line-height: 80%;
   color: #ffffff;
   white-space: nowrap;
@@ -120,11 +120,16 @@
 }
 
 .logo {
-  width: 70vw;
+  width: 70vw; 
   height: auto;
   display: flex;
   justify-content: center;
   z-index: 0;
+}
+
+.dimensioni-logo {
+  width: 26.9vw;
+  height: auto;
 }
 
 
@@ -220,82 +225,77 @@ header{
 
 .fa-bars {
   color: #fff;
-scale: 300%;
+scale: 150%;
 margin-top: 40px;
 margin-left: 60px;
 }
 
-.hooks-main {
-  width: 100%;
-  height: 100%;
-  /* background: black; */
-  /* overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center; */
+// Cursore
+
+.cursore {
+  background-color: #111;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
   position: fixed;
   top: 0;
-  mix-blend-mode: difference;
+  left: 0;
 }
 
-.b1,
-.b2,
-.b3 {
-  position: absolute;
-  will-change: transform;
-  border-radius: 50%;
-  background: white;
-  /* box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.75); */
-  /* opacity: 0.95; */
-  mix-blend-mode: difference;
+// Tablet
+@media screen and (min-device-width: 768px)
+    and (max-device-width: 1180px) and (orientation: portrait) {
+      .dimensioni-logo {
+        width: 78vw;
+        height: auto;
+      }
+    }
+    
+    // Tablet Ruotato
+    @media (min-width: 768px) and (max-width: 1180px) and (orientation: landscape) {
+      .dimensioni-logo {
+        width: 37.6vw;
+        height: auto;
+      }
+    }
+
+@media screen and (max-width: 768px) {
+  .text-line {
+    text-align: center;
+    font-variation-settings: "wght" 100, "ital" 0;
+    font-family: Oddval Variable;
+    font-size: 5.9vh;
+    line-height: 80%;
+    color: #ffffff;
+    white-space: nowrap;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-name: change;
+    transition-timing-function: ease;
+  }
+
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    .dimensioni-logo {
+      width: 1vw;
+      height: auto;
+    }
+  }
+    
+
+  .logo {
+  width: 70vw; 
+  height: auto;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  margin-top: 8vh;
 }
 
-.b1,
-.b2,
-.b3 {
-  width: 180px;
-  height: 180px;
-}
 
-/* width: 186px;
-  height: 186px;
-}
-
-  width: 200px;
-  height: 180px;
-} */
-
-/* .b1::after,
-.b2::after,
-.b3::after {
-  content: '';
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 1);
-} */
-
-.b2::after {
-  top: 70px;
-  left: 70px;
-  width: 70px;
-  height: 70px;
-}
-
-.b3::after {
-  top: 50px;
-  left: 50px;
-  width: 50px;
-  height: 50px;
-}
-
-.hooks-filter {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  /* filter: url('#goo'); */
-  overflow: hidden;
+  .dimensioni-logo {
+    width: 79vw;
+    height: auto;
+  }
+  
+    
 }
